@@ -1,1 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transforme seu perfil em uma máquina de engajamento e autoridade">
+    <title>Transforme seu Perfil - Engajamento e Autoridade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        .header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid white;
+            border-radius: 50%;
+            background: transparent;
+            position: absolute;
+        }
+
+        .logo-icon::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .logo-text {
+            color: #333;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 120px 0 40px;
+            text-align: center;
+            background: white;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .headline {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: 800;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .subheadline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cursor-icon {
+            display: inline-block;
+            margin-left: 3px;
+            color: #333;
+        }
+
+        .cta-button {
+            background: #e91e63;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+        }
+
+        /* VIDEO SECTION */
+        .video-section {
+            padding: 20px 0 60px;
+            background: white;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* SOCIAL PROOF SECTION */
+        .social-proof {
+            padding: 40px 0 60px;
+            background: white;
+            text-align: center;
+        }
+
+        .social-proof-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.4;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-proof-highlight {
+            color: #e91e63;
+            font-weight: 700;
+        }
+
+        .cursor-icon-proof {
+            display: inline-block;
+            margin-left: 3px;
+            color: #333;
+        }
+        .benefits {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .benefit-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 100px 0 60px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">imperial<br>mídia</div>
+                </a>
+                <div>
+                    <!-- Menu items aqui -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="headline">
+                    Transforme seu perfil<br>
+                    em uma máquina de<br>
+                    <span class="highlight">ENGAJAMENTO E AUTORIDADE</span>
+                </h1>
+                <p class="subheadline">
+                    Atraia marcas, empresas e clientes que querem investir no seu sucesso.Te gravei um vídeo rapidinho pra você entender tudo como funciona <span class="cursor-icon">👇</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <vturb-smartplayer id="vid-689eb5c994343208504f6f16" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+                    <script type="text/javascript">
+                        var s=document.createElement("script"); 
+                        s.src="https://scripts.converteai.net/49291246-87cf-4864-a192-013b84a23055/players/689eb5c994343208504f6f16/v4/player.js";
+                        s.async=true;
+                        document.head.appendChild(s);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF SECTION -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="social-proof-title">
+                Clientes que já fizeram seu perfil crescer usando nosso sistema com seguidores <span class="social-proof-highlight">reais e brasileiros</span> <span class="cursor-icon-proof">👇</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS CAROUSEL -->
+    <section class="testimonials-carousel">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="testimonial-slide">
+                        <img src="https://imperialmidia.shop/assets/img/comentarios/58682df6-d0a6-40f3-a1c3-ee6532f2a130.png" alt="Depoimento Cliente 1" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="https://imperialmidia.shop/assets/img/comentarios/a4d04e3c-056d-4e1e-a7fd-e3ca42058e35.png" alt="Depoimento Cliente 2" class="testimonial-image">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="https://imperialmidia.shop/assets/img/comentarios/e25ec857-af8d-4be8-bf1b-11c7b0578bd7.png" alt="Depoimento Cliente 3" class="testimonial-image">
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">O que você vai conseguir:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3 class="benefit-title">Mais Engajamento</h3>
+                    <p class="benefit-description">Aumente significativamente suas curtidas, comentários e compartilhamentos</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👑</div>
+                    <h3 class="benefit-title">Autoridade no Nicho</h3>
+                    <p class="benefit-description">Torne-se referência na sua área e atraia oportunidades</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="benefit-title">Mais Oportunidades</h3>
+                    <p class="benefit-description">Marcas e empresas vão querer investir no seu potencial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Depoimentos</h2>
+            <div class="testimonial-card">
+                <p>"Resultado incrível! Em 30 dias meu engajamento aumentou 300%"</p>
+                <strong>- Cliente Satisfeito</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const track = document.getElementById('carouselTrack');
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        // Auto-rotate carousel every 4 seconds
+        setInterval(nextSlide, 4000);
+    </script>
+</body>
+</html>
