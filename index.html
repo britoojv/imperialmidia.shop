@@ -206,7 +206,7 @@
 
         /* TESTIMONIALS CAROUSEL */
         .testimonials-carousel {
-            padding: 40px 0 60px;
+            padding: 40px 0;
             background: #f8f9fa;
             overflow: hidden;
         }
@@ -252,23 +252,41 @@
         }
 
         .benefits {
-            padding: 80px 0;
+            padding: 40px 0;
             background: white;
         }
 
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+            }
         }
 
         .benefit-card {
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px 15px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
+            flex: 1;
+            max-width: 180px;
+        }
+
+        @media (max-width: 768px) {
+            .benefit-card {
+                padding: 15px 10px;
+                max-width: 160px;
+                min-width: 140px;
+            }
         }
 
         .benefit-card:hover {
@@ -276,25 +294,42 @@
         }
 
         .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .benefit-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #333;
         }
 
         .benefit-description {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .benefit-icon {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
+            .benefit-title {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            
+            .benefit-description {
+                font-size: 0.85rem;
+            }
         }
 
         /* GUARANTEE SECTION */
         .guarantee {
-            padding: 80px 0;
+            padding: 40px 0;
             background: #f8f9fa;
         }
 
@@ -303,34 +338,34 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 25px;
         }
 
         .guarantee-card {
             background: white;
-            padding: 40px;
+            padding: 30px 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
             text-align: center;
         }
 
         .guarantee-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #e91e63;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .guarantee-list {
             list-style: none;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
         .guarantee-item {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
             font-weight: 600;
             color: #333;
         }
@@ -339,46 +374,47 @@
             content: '✓';
             background: #4CAF50;
             color: white;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 12px;
             font-weight: bold;
             flex-shrink: 0;
+            font-size: 0.9rem;
         }
 
         .risk-zero {
             background: white;
-            padding: 40px;
+            padding: 30px 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
             text-align: center;
         }
 
         .risk-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 15px;
         }
 
         .risk-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .risk-description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 10px;
+            line-height: 1.5;
+            margin-bottom: 8px;
         }
 
         .company-info {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #e91e63;
             font-weight: 600;
         }
@@ -407,11 +443,11 @@
 
             .guarantee-card,
             .risk-zero {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
 
             .guarantee-container {
-                gap: 30px;
+                gap: 20px;
             }
 
             .testimonial-slide {
@@ -551,24 +587,24 @@
     </section>
 
     <!-- VIDEO TESTIMONIALS SECTION -->
-    <section class="video-testimonials" style="padding: 80px 0; background: #f5f5f5;">
+    <section class="video-testimonials" style="padding: 40px 0; background: white;">
         <div class="container">
-            <div class="video-testimonials-title" style="text-align: center; margin-bottom: 25px; color: #2c3e50; font-size: 22px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); line-height: 1.3;">
+            <div class="video-testimonials-title" style="text-align: center; margin-bottom: 20px; color: #2c3e50; font-size: 20px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); line-height: 1.3;">
                 🗣️ <span style="color: #e74c3c; font-weight: bold;">RESULTADOS REAIS</span> de Clientes que <br>
                 Transformaram suas Redes Sociais!
             </div>
             
-            <div class="video-testimonials-subtitle" style="text-align: center; margin-bottom: 20px; color: #e74c3c; font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">
+            <div class="video-testimonials-subtitle" style="text-align: center; margin-bottom: 15px; color: #e74c3c; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">
                 ✨ Veja os depoimentos exclusivos ✨
             </div>
             
-            <div class="video-testimonials-container" style="display: flex; gap: 5px; justify-content: center; align-items: flex-start; width: 100%; margin: 0; position: relative; z-index: 10; background: #f5f5f5; padding: 5px;">
-                <div class="video-testimonials-wrapper" style="flex: 1; max-width: 49%; min-width: 120px; position: relative; z-index: 100;">
-                    <vturb-smartplayer id="vid-68a5633d288c411eab4ebacf" style="display: block !important; margin: 0 auto !important; width: 100% !important; max-width: 400px !important; border-radius: 8px; position: relative !important; z-index: 999 !important;"></vturb-smartplayer>
+            <div class="video-testimonials-container" style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 10px 5px;">
+                <div class="video-testimonials-wrapper" style="flex: 1; max-width: 49%; position: relative;">
+                    <vturb-smartplayer id="vid-68a5633d288c411eab4ebacf" style="display: block !important; margin: 0 auto !important; width: 100% !important; max-width: 300px !important; border-radius: 8px;"></vturb-smartplayer>
                 </div>
                 
-                <div class="video-testimonials-wrapper" style="flex: 1; max-width: 49%; min-width: 120px; position: relative; z-index: 100;">
-                    <vturb-smartplayer id="vid-68a558bee4999a94ff667ff5" style="display: block !important; margin: 0 auto !important; width: 100% !important; max-width: 400px !important; border-radius: 8px; position: relative !important; z-index: 999 !important;"></vturb-smartplayer>
+                <div class="video-testimonials-wrapper" style="flex: 1; max-width: 49%; position: relative;">
+                    <vturb-smartplayer id="vid-68a558bee4999a94ff667ff5" style="display: block !important; margin: 0 auto !important; width: 100% !important; max-width: 300px !important; border-radius: 8px;"></vturb-smartplayer>
                 </div>
             </div>
 
